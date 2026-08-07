@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	overflow-x: hidden;
+	background-color: #ffffff;
+	color: #0f172a;
+	font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+	text-rendering: optimizeLegibility;
+}
