@@ -5,80 +5,64 @@ const featuredProjects = [
     title: 'SourceXCloud',
     role: 'Backend Developer',
     description:
-      'A technology platform providing IT services and technology-focused learning offerings with a scalable full-stack setup.',
+      'SourceXCloud is a technology platform providing IT services and technology-focused learning offerings with a full-stack architecture.',
     features: [
-      'Designed REST API modules with structured backend architecture',
-      'Implemented MongoDB integration and secure data handling',
-      'Built utility flows for email workflows, logs, and export-ready services',
+      'Designed and developed backend functionality and REST APIs using Node.js and Express.js',
+      'Structured backend code using reusable routes, controllers, middleware and services',
+      'Designed and managed MongoDB schemas and database operations using Mongoose',
+      'Integrated Resend API for transactional email workflows and XLSX library for Excel exports',
+      'Implemented Morgan HTTP request logging and in-memory caching for performance optimization',
     ],
-    techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'REST APIs'],
-    githubUrl: 'SOURCEXCLOUD_GITHUB_URL',
-    liveUrl: 'SOURCEXCLOUD_LIVE_URL',
-  },
-  {
-    title: 'Project Placeholder One',
-    role: 'Full Stack Developer',
-    description:
-      'PLACEHOLDER: Replace with your major project summary highlighting backend system design and business impact.',
-    features: [
-      'PLACEHOLDER: Mention core backend feature',
-      'PLACEHOLDER: Mention database or architecture decision',
-      'PLACEHOLDER: Mention deployment or optimization outcome',
+    techStack: [
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'Mongoose',
+      'REST APIs',
+      'Resend API',
+      'Morgan',
+      'XLSX',
     ],
-    techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB'],
-    githubUrl: 'FEATURED_PROJECT_ONE_GITHUB_URL',
-    liveUrl: 'FEATURED_PROJECT_ONE_LIVE_URL',
-  },
-  {
-    title: 'Project Placeholder Two',
-    role: 'Backend-Focused Developer',
-    description:
-      'PLACEHOLDER: Replace with a concise overview of a production-style application and your technical contributions.',
-    features: [
-      'PLACEHOLDER: Mention API layer or service integration',
-      'PLACEHOLDER: Mention data model or workflow implementation',
-      'PLACEHOLDER: Mention measurable improvement or result',
-    ],
-    techStack: ['React.js', 'Node.js', 'Express.js', 'PostgreSQL', 'Prisma'],
-    githubUrl: 'FEATURED_PROJECT_TWO_GITHUB_URL',
-    liveUrl: 'FEATURED_PROJECT_TWO_LIVE_URL',
+    image: '/projects/sourcexcloud.png',
+    liveUrl: 'https://sourcexcloud.com',
   },
 ]
 
-const moreProjects = [
-  {
-    title: 'Mini Project One',
-    description:
-      'PLACEHOLDER: Short project summary with one or two outcomes showcasing practical backend or full-stack execution.',
-    techStack: ['React.js', 'Node.js', 'MongoDB'],
-    githubUrl: 'MORE_PROJECT_ONE_GITHUB_URL',
-    liveUrl: 'MORE_PROJECT_ONE_LIVE_URL',
-  },
-  {
-    title: 'Mini Project Two',
-    description:
-      'PLACEHOLDER: Brief description explaining the problem solved and your implementation approach.',
-    techStack: ['Express.js', 'REST APIs', 'Postman'],
-    githubUrl: 'MORE_PROJECT_TWO_GITHUB_URL',
-    liveUrl: 'MORE_PROJECT_TWO_LIVE_URL',
-  },
-  {
-    title: 'Mini Project Three',
-    description:
-      'PLACEHOLDER: Short details on architecture, API integration, or deployment workflow.',
-    techStack: ['React.js', 'Supabase', 'Tailwind CSS'],
-    githubUrl: 'MORE_PROJECT_THREE_GITHUB_URL',
-    liveUrl: 'MORE_PROJECT_THREE_LIVE_URL',
-  },
-  {
-    title: 'Mini Project Four',
-    description:
-      'PLACEHOLDER: Mention a backend functionality, data workflow, or optimization experiment.',
-    techStack: ['Node.js', 'PostgreSQL', 'Prisma'],
-    githubUrl: 'MORE_PROJECT_FOUR_GITHUB_URL',
-    liveUrl: 'MORE_PROJECT_FOUR_LIVE_URL',
-  },
-]
+const internshipExperience = {
+  company: 'Codesoar Technologies',
+  role: 'Backend Developer Intern',
+  description: 'Worked on backend development across two projects during internship.',
+  projects: [
+    {
+      title: 'FOA-Services',
+      role: 'Backend Development',
+      description:
+        'Worked on backend development for FOA-Services, contributing to API development, business logic, request validation, database operations, and backend module implementation.',
+      features: [
+        'Developed and worked on backend APIs using Node.js and Express.js.',
+        'Implemented and maintained business logic and request validation.',
+        'Worked with Prisma ORM for database operations.',
+        'Followed a modular backend structure with controllers, services, and validation.',
+        'Debugged backend issues and improved API reliability.',
+      ],
+      techStack: ['Node.js', 'Express.js', 'Prisma', 'REST APIs', 'API Validation'],
+    },
+    {
+      title: 'ERP Module',
+      role: 'Backend Development & Debugging',
+      description:
+        'Worked with an existing ERP backend to understand its architecture and business logic, identify issues, and implement fixes across backend modules.',
+      features: [
+        'Analyzed existing backend logic and API workflows.',
+        'Debugged and fixed issues across different ERP modules.',
+        'Worked with validation, database operations, and API handling.',
+        'Gained experience working with a large, modular backend codebase.',
+        'Improved understanding of business-driven backend logic and maintaining existing systems.',
+      ],
+      techStack: ['Node.js', 'Express.js', 'REST APIs', 'MongoDB', 'Prisma'],
+    },
+  ],
+}
 
 function Projects() {
   return (
@@ -89,19 +73,67 @@ function Projects() {
           A selection of projects I&apos;ve built and worked on.
         </p>
 
-        <div className="mt-10 grid gap-6">
+        <div className="mt-10 grid gap-8">
           {featuredProjects.map((project) => (
             <ProjectCard key={project.title} project={project} featured />
           ))}
-        </div>
 
-        <div className="mt-16">
-          <h3 className="text-2xl font-semibold text-slate-900">More Projects</h3>
-          <div className="mt-6 grid gap-5 sm:grid-cols-2">
-            {moreProjects.map((project) => (
-              <ProjectCard key={project.title} project={project} />
-            ))}
-          </div>
+          {/* Codesoar Technologies Block */}
+          <article className="group overflow-hidden rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md sm:p-8">
+            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-4">
+              <div>
+                <h3 className="text-xl font-bold text-slate-900 sm:text-2xl">
+                  {internshipExperience.company}
+                </h3>
+                <p className="mt-1.5 text-sm text-slate-500 sm:text-base">
+                  {internshipExperience.description}
+                </p>
+              </div>
+              <span className="rounded-md border border-blue-200 bg-blue-50 px-2.5 py-1 text-xs font-semibold text-blue-700">
+                {internshipExperience.role}
+              </span>
+            </div>
+
+            <div className="mt-6 grid gap-6 md:grid-cols-2">
+              {internshipExperience.projects.map((proj) => (
+                <div
+                  key={proj.title}
+                  className="flex flex-col rounded-lg border border-slate-200 bg-slate-50/20 p-5 transition-all duration-300 hover:border-slate-300 hover:shadow-sm"
+                >
+                  <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-slate-100/50 pb-2">
+                    <h4 className="text-lg font-bold text-slate-900">{proj.title}</h4>
+                    <span className="text-xs font-semibold text-blue-600 bg-blue-50/50 px-2 py-0.5 rounded border border-blue-100/30">
+                      {proj.role}
+                    </span>
+                  </div>
+                  
+                  <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                    {proj.description}
+                  </p>
+
+                  <ul className="mt-4 space-y-2 text-sm text-slate-600 flex-grow">
+                    {proj.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start gap-2.5">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-600" aria-hidden="true" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-5 flex flex-wrap gap-1.5 pt-3 border-t border-slate-100/50">
+                    {proj.techStack.map((tech) => (
+                      <span
+                        key={tech}
+                        className="rounded-md border border-slate-200 bg-slate-50 px-2 py-0.5 text-xs font-medium text-slate-700"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </article>
         </div>
       </div>
     </section>

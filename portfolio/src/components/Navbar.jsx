@@ -39,7 +39,7 @@ function Navbar() {
           className="text-sm font-semibold tracking-wide text-slate-900 transition-colors hover:text-blue-700"
           onClick={closeMenu}
         >
-          YOUR NAME
+          Suhana Chauhan
         </a>
 
         <div className="hidden items-center gap-7 md:flex">

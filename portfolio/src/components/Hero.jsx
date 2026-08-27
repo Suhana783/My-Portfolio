@@ -1,6 +1,6 @@
 const socialLinks = [
-  { label: 'GitHub', href: 'YOUR_GITHUB_URL' },
-  { label: 'LinkedIn', href: 'YOUR_LINKEDIN_URL' },
+  { label: 'GitHub', href: 'https://github.com/Suhana783' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/suhana123' },
 ]
 
 function Hero() {
@@ -10,7 +10,7 @@ function Hero() {
         <div>
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-blue-700">Hi, I&apos;m</p>
           <h1 className="mt-4 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-            YOUR NAME
+            Suhana Chauhan
           </h1>
           <p className="mt-4 text-lg font-semibold text-slate-700 sm:text-xl">
             MERN Stack Developer | Backend-Focused Developer
@@ -41,7 +41,7 @@ function Hero() {
                 key={link.label}
                 href={link.href}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="text-sm font-medium text-slate-600 transition-colors hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-700 focus-visible:ring-offset-2"
               >
                 {link.label}
@@ -58,7 +58,7 @@ function Hero() {
           </div>
           <pre className="overflow-x-auto rounded-lg border border-slate-200 bg-white p-4 text-xs leading-6 text-slate-700 sm:text-sm">
             <code>{`const developer = {
-  name: "YOUR NAME",
+  name: "Suhana Chauhan",
   role: "Backend-Focused MERN Developer",
   strengths: [
     "REST APIs",
