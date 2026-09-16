@@ -86,11 +86,12 @@ function Contact() {
   }
 
   return (
-    <section id="contact" className="scroll-mt-24 bg-slate-50 py-20 sm:py-24">
+    <section id="contact" className="scroll-mt-24 py-4 sm:py-6">
       <div className="mx-auto grid w-full max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-8">
         <div>
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Let&apos;s Connect</h2>
-          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 sm:text-lg">
+          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-700">Contact</p>
+          <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">Let&apos;s Connect</h2>
+          <p className="mt-4 max-w-xl text-base leading-8 text-slate-600 sm:text-lg">
             I&apos;m currently open to opportunities and would be happy to discuss projects,
             collaborations, or developer roles.
           </p>
@@ -112,9 +113,13 @@ function Contact() {
           </ul>
         </div>
 
-        <form ref={formRef} className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-7" onSubmit={handleSubmit}>
+        <form 
+          ref={formRef} 
+          className="relative rounded-3xl border border-white/70 bg-white/80 p-6 shadow-[0_25px_80px_-45px_rgba(15,23,42,0.45)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_28px_80px_-35px_rgba(15,23,42,0.55)] sm:p-7" 
+          onSubmit={handleSubmit}
+        >
           <div>
-            <label htmlFor="name" className="text-sm font-medium text-slate-700">
+            <label htmlFor="name" className="text-xs font-bold tracking-wide uppercase text-slate-600">
               Name
             </label>
             <input
@@ -123,12 +128,12 @@ function Contact() {
               type="text"
               placeholder="Your name"
               required
-              className="mt-2 w-full rounded-md border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
+              className="mt-1.5 w-full rounded-xl border border-slate-200/90 bg-slate-50/80 px-3.5 py-2 text-sm text-slate-900 shadow-xs outline-none transition-all duration-200 focus:border-blue-600 focus:bg-white focus:ring-4 focus:ring-blue-500/10 hover:border-slate-300"
             />
           </div>
 
           <div className="mt-4">
-            <label htmlFor="email" className="text-sm font-medium text-slate-700">
+            <label htmlFor="email" className="text-xs font-bold tracking-wide uppercase text-slate-600">
               Email
             </label>
             <input
@@ -137,27 +142,27 @@ function Contact() {
               type="email"
               placeholder="you@example.com"
               required
-              className="mt-2 w-full rounded-md border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
+              className="mt-1.5 w-full rounded-xl border border-slate-200/90 bg-slate-50/80 px-3.5 py-2 text-sm text-slate-900 shadow-xs outline-none transition-all duration-200 focus:border-blue-600 focus:bg-white focus:ring-4 focus:ring-blue-500/10 hover:border-slate-300"
             />
           </div>
 
           <div className="mt-4">
-            <label htmlFor="message" className="text-sm font-medium text-slate-700">
+            <label htmlFor="message" className="text-xs font-bold tracking-wide uppercase text-slate-600">
               Message
             </label>
             <textarea
               id="message"
               name="message"
-              rows="5"
+              rows="4"
               placeholder="Tell me about your project or role"
               required
-              className="mt-2 w-full rounded-md border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
+              className="mt-1.5 w-full resize-none rounded-xl border border-slate-200/90 bg-slate-50/80 px-3.5 py-2.5 text-sm text-slate-900 shadow-xs outline-none transition-all duration-200 focus:border-blue-600 focus:bg-white focus:ring-4 focus:ring-blue-500/10 hover:border-slate-300"
             />
           </div>
 
           {status.message ? (
             <p
-              className={`mt-4 rounded-md border px-3 py-2 text-sm ${
+              className={`mt-3.5 rounded-xl border px-3.5 py-2 text-sm font-medium ${
                 status.type === 'success'
                   ? 'border-emerald-200 bg-emerald-50 text-emerald-800'
                   : 'border-rose-200 bg-rose-50 text-rose-800'
@@ -168,13 +173,15 @@ function Contact() {
             </p>
           ) : null}
 
-          <button
-            type="submit"
-            disabled={isSending}
-            className="mt-6 inline-flex items-center justify-center rounded-md bg-blue-700 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-800 disabled:cursor-not-allowed disabled:bg-blue-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-700 focus-visible:ring-offset-2"
-          >
-            {isSending ? 'Sending...' : 'Send Message'}
-          </button>
+          <div className="mt-5">
+            <button
+              type="submit"
+              disabled={isSending}
+              className="inline-flex items-center justify-center rounded-full bg-linear-to-r from-blue-700 to-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-blue-200/70 transition-all duration-200 hover:-translate-y-0.5 hover:from-blue-800 hover:to-blue-700 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-700 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:bg-blue-400 disabled:shadow-none"
+            >
+              {isSending ? 'Sending...' : 'Send Message'}
+            </button>
+          </div>
         </form>
       </div>
     </section>

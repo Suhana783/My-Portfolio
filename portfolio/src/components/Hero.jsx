@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const socialLinks = [
   { label: 'GitHub', href: 'https://github.com/Suhana783' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/suhana123' },
@@ -5,44 +7,44 @@ const socialLinks = [
 
 function Hero() {
   return (
-    <section id="home" className="scroll-mt-24 border-b border-slate-200 bg-white">
-      <div className="mx-auto grid w-full max-w-6xl gap-12 px-4 pb-20 pt-32 sm:px-6 md:pb-24 md:pt-36 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:px-8">
+    <section id="home" className="relative flex flex-1 items-center overflow-hidden bg-transparent pt-16 pb-4">
+      <div className="mx-auto grid w-full max-w-6xl gap-8 px-4 py-8 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:px-8">
         <div>
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-blue-700">Hi, I&apos;m</p>
-          <h1 className="mt-4 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-700">Hi, I&apos;m</p>
+          <h1 className="mt-2 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
             Suhana Chauhan
           </h1>
-          <p className="mt-4 text-lg font-semibold text-slate-700 sm:text-xl">
+          <p className="mt-3 text-lg font-semibold text-slate-700 sm:text-xl">
             MERN Stack Developer | Backend-Focused Developer
           </p>
-          <p className="mt-6 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+          <p className="mt-4 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
             I build scalable web applications, reliable REST APIs, and maintainable backend systems while
             delivering clean and intuitive user experiences with modern web technologies.
           </p>
 
-          <div className="mt-10 flex flex-wrap items-center gap-4">
-            <a
-              href="#projects"
-              className="rounded-md bg-blue-700 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-700 focus-visible:ring-offset-2"
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <Link
+              to="/projects"
+              className="rounded-full bg-linear-to-r from-blue-700 to-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-200/70 transition-all hover:-translate-y-0.5 hover:from-blue-800 hover:to-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-700 focus-visible:ring-offset-2"
             >
               View Projects
-            </a>
-            <a
-              href="#contact"
-              className="rounded-md border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition-colors hover:border-slate-400 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-700 focus-visible:ring-offset-2"
+            </Link>
+            <Link
+              to="/contact"
+              className="rounded-full border border-slate-300/80 bg-white/70 px-5 py-3 text-sm font-semibold text-slate-700 shadow-sm transition-all hover:-translate-y-0.5 hover:border-slate-400 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-700 focus-visible:ring-offset-2"
             >
               Contact Me
-            </a>
+            </Link>
           </div>
 
-          <div className="mt-8 flex items-center gap-5">
+          <div className="mt-6 flex items-center gap-5">
             {socialLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-medium text-slate-600 transition-colors hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-700 focus-visible:ring-offset-2"
+                className="text-sm font-bold text-blue-700 transition-colors hover:text-blue-800 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-700 focus-visible:ring-offset-2"
               >
                 {link.label}
               </a>
@@ -50,13 +52,13 @@ function Hero() {
           </div>
         </div>
 
-        <div className="rounded-xl border border-slate-200 bg-slate-50 p-5 shadow-sm sm:p-6">
+        <div className="rounded-3xl border border-white/70 bg-white/75 p-5 shadow-[0_25px_80px_-45px_rgba(15,23,42,0.55)] backdrop-blur-xl sm:p-6">
           <div className="mb-4 flex items-center gap-2">
             <span className="h-2.5 w-2.5 rounded-full bg-red-400" aria-hidden="true" />
             <span className="h-2.5 w-2.5 rounded-full bg-amber-400" aria-hidden="true" />
             <span className="h-2.5 w-2.5 rounded-full bg-green-400" aria-hidden="true" />
           </div>
-          <pre className="overflow-x-auto rounded-lg border border-slate-200 bg-white p-4 text-xs leading-6 text-slate-700 sm:text-sm">
+          <pre className="overflow-x-auto rounded-2xl border border-slate-200/80 bg-[#fbfdff] p-4 text-xs leading-6 text-slate-700 shadow-inner sm:text-sm">
             <code>{`const developer = {
   name: "Suhana Chauhan",
   role: "Backend-Focused MERN Developer",
